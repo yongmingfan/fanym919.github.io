@@ -22,6 +22,19 @@
 				window.location.href = "https://" + window.location.host + window.location.pathname + window.location.search;
 			}
 		</script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				// Remove any existing favicon elements
+				const existingFavicons = document.querySelectorAll("link[rel='icon']");
+				existingFavicons.forEach(favicon => favicon.remove());
+
+				// Add a blank favicon to prevent overrides
+				const blankFavicon = document.createElement("link");
+				blankFavicon.rel = "icon";
+				blankFavicon.href = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'></svg>";
+				document.head.appendChild(blankFavicon);
+			});
+		</script>
         <script>
             $(function () {
                 $("#header").load("header.html");
@@ -31,21 +44,6 @@
     </head>
 
     <body>
-        <!--
-         <nav class="u-background">
-            <div class="u-wrapper">
-               <ul class="Banner">
-                  <li class="Banner-item Banner-item--title">
-                     <h1 class="Banner-heading"><a class="Banner-link u-clickable" href="https://yongming.fan/">Yongming Fan</a></h1>
-                  </li>
-                  <li class="Banner-item"><a class="Banner-link u-clickable" href="https://ldeso.github.io/hugo-flex-demo/about/">Home</a></li>
-                  <li class="Banner-item"><a class="Banner-link u-clickable" href="https://ldeso.github.io/hugo-flex-demo/post/">Publication</a></li>
-                  <li class="Banner-item"><a class="Banner-link u-clickable" href="https://ldeso.github.io/hugo-flex-demo/tags/">Project</a></li>
-                  <li class="Banner-item"><a class="Banner-link u-clickable" href="https://ldeso.github.io/hugo-flex-demo/categories/">Teaching</a></li>
-               </ul>
-            </div>
-         </nav>
-         -->
         <div id="header"></div>
         <main>
             <div class="u-wrapper">
