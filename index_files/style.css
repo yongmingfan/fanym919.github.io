@@ -34,3 +34,74 @@ hr {
     background-color: yellow; /* Highlight effect */
     transition: background-color 2s ease-out; /* Fade-out effect */
 }
+
+/* Container for the boxes */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between boxes */
+    justify-content: space-between; /* Ensures even spacing */
+    width: 100%; /* Full width */
+    max-width: 1200px;
+}
+
+/* Box Styling */
+.box {
+    display: flex;
+    flex-direction: column; /* Ensures vertical stacking of elements */
+    align-items: stretch; /* Ensures both header and content stretch */
+    text-align: left; /* Ensures text alignment */
+    border: 1px solid #DDD7D6;
+    border-radius: 7px;
+    padding: 0; /* No padding on the box, handled inside */
+    background-color: white;
+    box-sizing: border-box;
+    flex: 1 1 calc(33.33% - 15px); /* Ensures each box takes equal space */
+    min-width: 200px; /* Prevents boxes from shrinking too much */
+}
+
+/* Header Styling */
+.box-header {
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 10px 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #DDD7D6; /* Separates header from content */
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+/* Content Styling */
+.box-content {
+    padding: 15px;
+}
+
+/* Remove Left-side Padding */
+.box-content ul {
+    list-style: none; /* Removes default bullets */
+    padding-left: 0; /* Ensures no left indentation */
+    margin-left: 0; /* Aligns text fully left */
+}
+
+.box-content li {
+    margin-bottom: 5px; /* Adds spacing between list items */
+    padding-left: 10px; /* Adds a little space before each item */
+    text-indent: 3px; /* Prevents indentation overflow */
+}
+
+.box i {
+    color: #495057 !important; /* Sets the icon color */
+    margin-right: 8px; /* Adds spacing between the icon and text */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .box {
+        flex: 1 1 calc(50% - 15px); /* Two boxes per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .box {
+        flex: 1 1 100%; /* One box per row */
+    }
+}
