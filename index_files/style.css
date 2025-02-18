@@ -1,0 +1,36 @@
+.list-inline-item {
+    display: inline-block;
+}
+.list-inline-item:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+.custom-stack-1-5x {
+    transform: scale(1.2); /* 1.5x size */
+}
+.fa-circle.fa-stack-2x {
+    color: #495057;
+}
+
+.rounded-box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid grey;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+hr {
+    border: 1px solid #C7C3C2; /* Custom color */
+    width: 100%; /* Full width */
+    margin: 10px 0; /* Adds spacing before and after */
+}
+
+.highlighted {
+    background-color: yellow; /* Highlight effect */
+    transition: background-color 2s ease-out; /* Fade-out effect */
+}
