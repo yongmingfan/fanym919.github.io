@@ -13,7 +13,6 @@
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'></svg>">
         <script defer="" src="./index_files/soundcloud.min.0bec.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<link rel="stylesheet" href="./index_files/box.css">
 		
         <link href="./index_files/style.css" rel="stylesheet" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -21,19 +20,6 @@
 			if (window.location.protocol === "http:") {
 				window.location.href = "https://" + window.location.host + window.location.pathname + window.location.search;
 			}
-		</script>
-		<script>
-			document.addEventListener("DOMContentLoaded", function () {
-				// Remove any existing favicon elements
-				const existingFavicons = document.querySelectorAll("link[rel='icon']");
-				existingFavicons.forEach(favicon => favicon.remove());
-
-				// Add a blank favicon to prevent overrides
-				const blankFavicon = document.createElement("link");
-				blankFavicon.rel = "icon";
-				blankFavicon.href = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'></svg>";
-				document.head.appendChild(blankFavicon);
-			});
 		</script>
         <script>
             $(function () {
