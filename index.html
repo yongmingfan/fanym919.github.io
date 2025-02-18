@@ -69,7 +69,7 @@
 						
 						
 						<li class="list-inline-item">
-              <a href="https://www.github.com/fanym919">
+              <a href="https://www.github.com/yongmingfan">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa-brands fa-github fa-stack-1x fa-inverse custom-stack-1-5x"></i>
@@ -161,6 +161,7 @@
         <footer class="Footer">
             <div id="footer"></div>
         </footer>
+<!--
 		
 		<script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -176,6 +177,30 @@
         }
     });
 </script>
+-->
+		<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function highlightElement() {
+            const hash = window.location.hash.replace("#", ""); // Remove #
+            if (!hash) return; // If there's no hash, exit
+
+            const targetElement = document.getElementById(hash);
+            if (targetElement) {
+                targetElement.classList.add("highlighted");
+                setTimeout(() => {
+                    targetElement.classList.remove("highlighted"); // Remove highlight after 2s
+                }, 2000);
+            }
+        }
+
+        // Run function immediately after DOM loads
+        highlightElement();
+
+        // Also run again if the hash changes (useful for HTTPS behavior)
+        window.addEventListener("hashchange", highlightElement);
+    });
+</script>
+		
 		
     </body>
 </html>
