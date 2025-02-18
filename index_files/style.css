@@ -31,7 +31,7 @@ hr {
 }
 
 .highlighted {
-    background-color: yellow; /* Highlight effect */
+    background-color: yellow !important; /* Highlight effect */
     transition: background-color 2s ease-out; /* Fade-out effect */
 }
 
