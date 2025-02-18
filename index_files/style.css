@@ -93,6 +93,23 @@ hr {
     margin-right: 8px; /* Adds spacing between the icon and text */
 }
 
+.box-layout {
+    display: flex; /* Enables horizontal layout */
+    flex-direction: row; /* Ensures items are in a row */
+    align-items: center; /* Aligns image and text vertically */
+    gap: 15px; /* Adds spacing between image and text */
+}
+
+.box-image {
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 7px; /* Optional: Rounded corners */
+}
+
+.box-layout p {
+    flex: 1; /* Ensures text takes up remaining space */
+}
+
 /* Responsive Adjustments */
 @media (max-width: 900px) {
     .box {
@@ -104,4 +121,20 @@ hr {
     .box {
         flex: 1 1 100%; /* One box per row */
     }
+}
+
+.box-button {
+    display: inline-block; /* Ensures button stays inline */
+    background-color: #495057; /* Blue color */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    padding: 4px 6px; /* Adjust padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Show pointer on hover */
+    transition: background-color 0.3s ease-in-out;
+    margin-left: 5px; /* Adds space between text and button */
+}
+
+.box-button:hover {
+    background-color: #2a3035; /* Darker blue on hover */
 }
