@@ -18,6 +18,11 @@
 		
         <link href="./index_files/style.css" rel="stylesheet" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		<script>
+			if (window.location.protocol === "http:") {
+				window.location.href = "https://" + window.location.host + window.location.pathname + window.location.search;
+			}
+		</script>
         <script>
             $(function () {
                 $("#header").load("header.html");
