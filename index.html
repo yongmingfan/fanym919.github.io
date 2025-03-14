@@ -24,9 +24,9 @@
 			}
 		</script>
         <script>
-            $(function () {
+$(function () {
     $("#header").load("header.html", function () {
-        // Ensure fade effect works
+        // Handle menu toggle
         $(document).on("click", ".menu-toggle", function () {
             let menu = $(".Banner-menu");
 
@@ -34,12 +34,26 @@
                 menu.css("opacity", "0");
                 setTimeout(() => {
                     menu.removeClass("active").css("display", "none");
-                }, 300); // Matches transition duration
+                }, 300);
             } else {
                 menu.css("display", "flex");
                 setTimeout(() => {
                     menu.addClass("active").css("opacity", "1");
-                }, 10); // Ensures transition applies
+                }, 10);
+            }
+        });
+
+        // Handle window resize to reset menu visibility
+        $(window).on("resize", function () {
+            if ($(window).width() > 768) {
+                $(".Banner-menu").css({
+                    "display": "flex",
+                    "opacity": "1",
+                    "visibility": "visible",
+                    "pointer-events": "auto"
+                });
+            } else {
+                $(".Banner-menu").removeAttr("style"); // Reset styles when resizing back
             }
         });
     });
