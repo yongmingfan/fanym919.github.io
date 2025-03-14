@@ -1,3 +1,40 @@
+$(function () {
+    $("#header").load("header.html", function () {
+        // Handle menu toggle
+        $(document).on("click", ".menu-toggle", function () {
+            let menu = $(".Banner-menu");
+
+            if (menu.hasClass("active")) {
+                menu.css("opacity", "0");
+                setTimeout(() => {
+                    menu.removeClass("active").css("display", "none");
+                }, 300);
+            } else {
+                menu.css("display", "flex");
+                setTimeout(() => {
+                    menu.addClass("active").css("opacity", "1");
+                }, 10);
+            }
+        });
+
+        // Handle window resize to reset menu visibility
+        $(window).on("resize", function () {
+            if ($(window).width() > 768) {
+                $(".Banner-menu").css({
+                    "display": "flex",
+                    "opacity": "1",
+                    "visibility": "visible",
+                    "pointer-events": "auto"
+                });
+            } else {
+                $(".Banner-menu").removeAttr("style"); // Reset styles when resizing back
+            }
+        });
+    });
+
+    $("#footer").load("footer.html");
+});
+
 document.addEventListener("DOMContentLoaded", function() {
     const menuToggle = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".Banner-menu");
