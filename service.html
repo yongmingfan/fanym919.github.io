@@ -10,26 +10,56 @@
         <!-- integrity="sha256-pGpZppoFTcKjI4AxA/mnLXwYHbQAOjGcO1nJE4T2uNE=" crossorigin="anonymous"> -->
         <link href="./index_files/soundcloud.min.ac11.css" rel="stylesheet" />
         <link href="./index_files/syntax.min.6ca0.css" rel="stylesheet" />
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'></svg>">
         <link href="./index_files/style.css" rel="stylesheet" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-	
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <script defer="" src="./index_files/nav.js"></script>
         <script defer="" src="./index_files/soundcloud.min.0bec.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			if (window.location.protocol === "http:") {
-				window.location.href = "https://" + window.location.host + window.location.pathname + window.location.search;
-			}
-		</script>
+        <script>
+            if (window.location.protocol === "http:") {
+            	window.location.href = "https://" + window.location.host + window.location.pathname + window.location.search;
+            }
+        </script>
         <script>
             $(function () {
-                $("#header").load("header.html");
+                $("#header").load("header.html", function () {
+                    // Handle menu toggle
+                    $(document).on("click", ".menu-toggle", function () {
+                        let menu = $(".Banner-menu");
+            
+                        if (menu.hasClass("active")) {
+                            menu.css("opacity", "0");
+                            setTimeout(() => {
+                                menu.removeClass("active").css("display", "none");
+                            }, 300);
+                        } else {
+                            menu.css("display", "flex");
+                            setTimeout(() => {
+                                menu.addClass("active").css("opacity", "1");
+                            }, 10);
+                        }
+                    });
+            
+                    // Handle window resize to reset menu visibility
+                    $(window).on("resize", function () {
+                        if ($(window).width() > 768) {
+                            $(".Banner-menu").css({
+                                "display": "flex",
+                                "opacity": "1",
+                                "visibility": "visible",
+                                "pointer-events": "auto"
+                            });
+                        } else {
+                            $(".Banner-menu").removeAttr("style"); // Reset styles when resizing back
+                        }
+                    });
+                });
+            
                 $("#footer").load("footer.html");
             });
         </script>
     </head>
-
     <body>
         <div id="header"></div>
         <main>
@@ -40,14 +70,12 @@
                             <h2 class="Heading-title">Professional Service</h2>
                             <!--                     <time datetime="2019-03-11T00:00:00Z">March 11, 2019</time>-->
                         </header>
-                        
                         <h3>2025</h3>
                         <li>
                             <p style="display: inline;">
                                 <strong>Artifact PC Member</strong>: Privacy Enhancing Technologies Symposium (PoPETs)
                             </p>
                         </li>
-                        
                         <h3>2024</h3>
                         <li style="margin-bottom: 5px">
                             <p style="display: inline;">
@@ -69,7 +97,6 @@
                                 <strong>Reviewer</strong>: International Journal of Applied Cryptography (IJACT)
                             </p>
                         </li>
-                        
                         <h3>2023</h3>
                         <li style="margin-bottom: 5px">
                             <p style="display: inline;">
@@ -86,14 +113,12 @@
                                 <strong>Sub-Reviewer</strong>: IEEE International Conferenceon Medical Artificial Intelligence (MedAI)
                             </p>
                         </li>
-                        
                         <h3>2022</h3>
                         <li>
                             <p style="display: inline;">
                                 <strong>Reviewer</strong>: Financial Cryptography and Data Security (FC)
                             </p>
                         </li>
-						
                     </article>
                 </div>
             </div>

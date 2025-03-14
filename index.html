@@ -1,33 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="color-scheme" content="light dark" />
-		<meta name="description" content="Yongming Fan's personal website." />
+        <meta name="description" content="Yongming Fan's personal website." />
         <title>Yongming Fan</title>
         <link href="https://yongming.fan/" rel="canonical" />
         <link href="./index_files/base.min.b8d1.css" rel="stylesheet" />
         <!-- integrity="sha256-pGpZppoFTcKjI4AxA/mnLXwYHbQAOjGcO1nJE4T2uNE=" crossorigin="anonymous"> -->
         <link href="./index_files/soundcloud.min.ac11.css" rel="stylesheet" />
         <link href="./index_files/syntax.min.6ca0.css" rel="stylesheet" />
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'></svg>">
         <link href="./index_files/style.css" rel="stylesheet" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-	
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <script defer="" src="./index_files/nav.js"></script>
         <script defer="" src="./index_files/soundcloud.min.0bec.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			if (window.location.protocol === "http:") {
-				window.location.href = "https://" + window.location.host + window.location.pathname + window.location.search;
-			}
-		</script>
+        <script>
+            if (window.location.protocol === "http:") {
+            	window.location.href = "https://" + window.location.host + window.location.pathname + window.location.search;
+            }
+        </script>
+        <script>
+            $(function () {
+                $("#header").load("header.html", function () {
+                    // Handle menu toggle
+                    $(document).on("click", ".menu-toggle", function () {
+                        let menu = $(".Banner-menu");
+            
+                        if (menu.hasClass("active")) {
+                            menu.css("opacity", "0");
+                            setTimeout(() => {
+                                menu.removeClass("active").css("display", "none");
+                            }, 300);
+                        } else {
+                            menu.css("display", "flex");
+                            setTimeout(() => {
+                                menu.addClass("active").css("opacity", "1");
+                            }, 10);
+                        }
+                    });
+            
+                    // Handle window resize to reset menu visibility
+                    $(window).on("resize", function () {
+                        if ($(window).width() > 768) {
+                            $(".Banner-menu").css({
+                                "display": "flex",
+                                "opacity": "1",
+                                "visibility": "visible",
+                                "pointer-events": "auto"
+                            });
+                        } else {
+                            $(".Banner-menu").removeAttr("style"); // Reset styles when resizing back
+                        }
+                    });
+                });
+            
+                $("#footer").load("footer.html");
+            });
+        </script>
     </head>
-
     <body>
         <div id="header"></div>
-		
         <main>
             <div class="u-wrapper">
                 <div class="u-padding">
@@ -46,94 +81,86 @@
                             privacy and efficiency in various applications. I aim to bridge the gap between theoretical cryptography and practical security solutions, addressing critical challenges in the rapidly evolving digital landscape.
                         </p>
                         <p>Feel free to contact with me and you can see my CV for more information.</p>
-						
-						
-						<li class="list-inline-item">
-              <a href="https://www.github.com/yongmingfan">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa-brands fa-github fa-stack-1x fa-inverse custom-stack-1-5x"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.linkedin.com/in/fanyongming">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa-brands fa-linkedin fa-stack-1x fa-inverse custom-stack-1-5x"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://scholar.google.com/citations?user=a-46tFEAAAAJ&hl=en">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa-brands fa-google-scholar fa-stack-1x fa-inverse custom-stack-1-5x"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.yongming.fan/docs/CV.pdf">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-					<strong style="color:white" class="fa-stack-1x">CV</strong>
-                </span>
-              </a>
-            </li>
-						<p><br></p>
-						
-						<hr>
-				
-						<p><br></p>
-			
-<!--
-            <li class="list-inline-item">
-			  <div style="display: inline" class="subheading mb-3"></div>
-              <a href="https://www.github.com/fanym919">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa-brands fa-github fa-stack-1x fa-inverse custom-stack-1-5x"></i>
-                </span>
-              </a>
-            </li>
--->
-			<div class="container">
-    <div class="box">
-        <div class="box-header">Education</div>
-        <div class="box-content">
-            <ul>
-                <li>Ph.D. Computer Science, Purdue University, 2026</li>
-                <li>M.S. Computer Science, Indiana University, 2020</li>
-                <li>B.A. Mathematics, Indiana University, 2018</li>
-                <li>B.S. Computer Science, Indiana University, 2018</li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="box">
-        <div class="box-header" id="highlight-content">Contact</div>
-        <div class="box-content">
-		<ul>
-<!--                <li><i class="fa fa-envelope"></i> <a href="mailto:fan322@purdue.edu">fan322@purdue.edu</a></li>-->
-                <li>
-					<i style="margin-bottom: 20px" class="fa fa-envelope custom-stack-1-5x"></i>
-<!--					<a href="mailto:fan322@purdue.edu">fan322@purdue.edu</a>-->
-					fan322 [AT] purdue.edu
-			</li>
-                <li>
-					<i style="margin-bottom: 20px" class="fa fa-envelope custom-stack-1-5x"></i>
-					yongming.fan [AT] bsu.edu
-			</li>
-                <li>
-					<i style="margin-bottom: 0px" class="fa fa-phone custom-stack-1-5x">
-					</i> (812) 327-8479<br>
-			</li>
-            </ul>
-			
-		</div>
-    </div>
-</div>
-					           
+                        <li class="list-inline-item">
+                            <a href="https://www.github.com/yongmingfan">
+                            <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-github fa-stack-1x fa-inverse custom-stack-1-5x"></i>
+                            </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/fanyongming">
+                            <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-linkedin fa-stack-1x fa-inverse custom-stack-1-5x"></i>
+                            </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://scholar.google.com/citations?user=a-46tFEAAAAJ&hl=en">
+                            <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-google-scholar fa-stack-1x fa-inverse custom-stack-1-5x"></i>
+                            </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.yongming.fan/docs/CV.pdf">
+                            <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <strong style="color:white" class="fa-stack-1x">CV</strong>
+                            </span>
+                            </a>
+                        </li>
+                        <p><br></p>
+                        <hr>
+                        <p><br></p>
+                        <!--
+                            <li class="list-inline-item">
+                            <div style="display: inline" class="subheading mb-3"></div>
+                              <a href="https://www.github.com/fanym919">
+                                <span class="fa-stack fa-lg">
+                                  <i class="fa fa-circle fa-stack-2x"></i>
+                                  <i class="fa-brands fa-github fa-stack-1x fa-inverse custom-stack-1-5x"></i>
+                                </span>
+                              </a>
+                            </li>
+                            -->
+                        <div class="container">
+                            <div class="box">
+                                <div class="box-header">Education</div>
+                                <div class="box-content">
+                                    <ul>
+                                        <li>Ph.D. Computer Science, Purdue University, 2026</li>
+                                        <li>M.S. Computer Science, Indiana University, 2020</li>
+                                        <li>B.A. Mathematics, Indiana University, 2018</li>
+                                        <li>B.S. Computer Science, Indiana University, 2018</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="box-header" id="highlight-content">Contact</div>
+                                <div class="box-content">
+                                    <ul>
+                                        <!--                <li><i class="fa fa-envelope"></i> <a href="mailto:fan322@purdue.edu">fan322@purdue.edu</a></li>-->
+                                        <li>
+                                            <i style="margin-bottom: 20px" class="fa fa-envelope custom-stack-1-5x"></i>
+                                            <!--					<a href="mailto:fan322@purdue.edu">fan322@purdue.edu</a>-->
+                                            fan322 [AT] purdue.edu
+                                        </li>
+                                        <li>
+                                            <i style="margin-bottom: 20px" class="fa fa-envelope custom-stack-1-5x"></i>
+                                            yongming.fan [AT] bsu.edu
+                                        </li>
+                                        <li>
+                                            <i style="margin-bottom: 0px" class="fa fa-phone custom-stack-1-5x">
+                                            </i> (812) 327-8479<br>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -141,46 +168,43 @@
         <footer class="Footer">
             <div id="footer"></div>
         </footer>
-<!--
-		
-		<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const hash = window.location.hash; // Get the #highlight-content
-        if (hash) {
-            const targetElement = document.querySelector(hash);
-            if (targetElement) {
-                targetElement.classList.add("highlighted");
-                setTimeout(() => {
-                    targetElement.classList.remove("highlighted"); // Remove highlight after a few seconds
-                }, 2000);
-            }
-        }
-    });
-</script>
--->
-		<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        function highlightElement() {
-            const hash = window.location.hash.replace("#", ""); // Remove #
-            if (!hash) return; // If there's no hash, exit
-
-            const targetElement = document.getElementById(hash);
-            if (targetElement) {
-                targetElement.classList.add("highlighted");
-                setTimeout(() => {
-                    targetElement.classList.remove("highlighted"); // Remove highlight after 2s
-                }, 2000);
-            }
-        }
-
-        // Run function immediately after DOM loads
-        highlightElement();
-
-        // Also run again if the hash changes (useful for HTTPS behavior)
-        window.addEventListener("hashchange", highlightElement);
-    });
-</script>
-		
-		
+        <!--
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                  const hash = window.location.hash; // Get the #highlight-content
+                  if (hash) {
+                      const targetElement = document.querySelector(hash);
+                      if (targetElement) {
+                          targetElement.classList.add("highlighted");
+                          setTimeout(() => {
+                              targetElement.classList.remove("highlighted"); // Remove highlight after a few seconds
+                          }, 2000);
+                      }
+                  }
+              });
+            </script>
+            -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                function highlightElement() {
+                    const hash = window.location.hash.replace("#", ""); // Remove #
+                    if (!hash) return; // If there's no hash, exit
+            
+                    const targetElement = document.getElementById(hash);
+                    if (targetElement) {
+                        targetElement.classList.add("highlighted");
+                        setTimeout(() => {
+                            targetElement.classList.remove("highlighted"); // Remove highlight after 2s
+                        }, 2000);
+                    }
+                }
+            
+                // Run function immediately after DOM loads
+                highlightElement();
+            
+                // Also run again if the hash changes (useful for HTTPS behavior)
+                window.addEventListener("hashchange", highlightElement);
+            });
+        </script>
     </body>
 </html>
