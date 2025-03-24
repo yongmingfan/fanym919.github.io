@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
+		<link rel="icon" href="./index_files/icon.png">
+        <title>Yongming Fan</title>
+        <link href="https://yongming.fan/" rel="canonical" />
+        <link href="./index_files/base.min.b8d1.css" rel="stylesheet" />
+        <!-- integrity="sha256-pGpZppoFTcKjI4AxA/mnLXwYHbQAOjGcO1nJE4T2uNE=" crossorigin="anonymous"> -->
+        <link href="./index_files/soundcloud.min.ac11.css" rel="stylesheet" />
+        <link href="./index_files/syntax.min.6ca0.css" rel="stylesheet" />
+        <link href="./index_files/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <script defer="" src="./index_files/nav.js"></script>
+        <script defer="" src="./index_files/soundcloud.min.0bec.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            if (window.location.protocol === "http:") {
+            	window.location.href = "https://" + window.location.host + window.location.pathname + window.location.search;
+            }
+        </script>
+        <script>
+            $(function () {
+                $("#header").load("header.html", function () {
+                    // Handle menu toggle
+                    $(document).on("click", ".menu-toggle", function () {
+                        let menu = $(".Banner-menu");
+            
+                        if (menu.hasClass("active")) {
+                            menu.css("opacity", "0");
+                            setTimeout(() => {
+                                menu.removeClass("active").css("display", "none");
+                            }, 300);
+                        } else {
+                            menu.css("display", "flex");
+                            setTimeout(() => {
+                                menu.addClass("active").css("opacity", "1");
+                            }, 10);
+                        }
+                    });
+            
+                    // Handle window resize to reset menu visibility
+                    $(window).on("resize", function () {
+                        if ($(window).width() > 768) {
+                            $(".Banner-menu").css({
+                                "display": "flex",
+                                "opacity": "1",
+                                "visibility": "visible",
+                                "pointer-events": "auto"
+                            });
+                        } else {
+                            $(".Banner-menu").removeAttr("style"); // Reset styles when resizing back
+                        }
+                    });
+                });
+            
+                $("#footer").load("footer.html");
+            });
+        </script>
+    </head>
+    <body>
+        <div id="header"></div>
+        <main>
+            <div class="u-wrapper">
+                <div class="u-padding">
+                    <article>
+						<br>
+						<br>
+                        <center><h2>Sorry, The page you were looking for does not exist</h2></center>
+                    </article>
+                </div>
+            </div>
+        </main>
+        <footer class="Footer">
+            <div id="footer"></div>
+        </footer>
+    </body>
+</html>
