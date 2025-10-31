@@ -66,13 +66,10 @@ kbd:has(kbd) {
 	justify-content: space-between;
 	margin: 0;
 	padding: 0;
-	align-items: baseline; /* aligns text consistently across browsers */
 }
 
 .Banner-item--title {
-	display: flex;
-	align-items: center;   /* fixes Chrome's vertical offset */
-	line-height: 1;        /* normalizes text baseline */
+	flex-grow: 1;
 }
 
 .Banner-item:nth-child(1) {
@@ -95,12 +92,10 @@ kbd:has(kbd) {
 	order: 1
 }
 
-/* .Banner-item--title {
-	flex-grow: 1
-} */
-
 .Banner-heading {
-	margin: 0
+	display: flex;
+    align-items: center;
+    margin: 0;
 }
 
 .Banner-link {
