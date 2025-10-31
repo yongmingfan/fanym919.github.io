@@ -56,14 +56,16 @@ function fixLinksForNonGithub() {
 
     document.querySelectorAll("a[href]").forEach(a => {
         const href = a.getAttribute("href");
+        if (!href) return;
 
+        // Skip external links, fragments, mailto, already-html, folders, or any file with an extension (.pdf, .png, .js, etc.)
         if (
-            !href ||
             href.startsWith("http") ||
             href.startsWith("#") ||
             href.startsWith("mailto:") ||
             href.endsWith(".html") ||
-            href.endsWith("/")
+            href.endsWith("/") ||
+            href.match(/\.[a-z0-9]+$/i) // ✅ skip any existing extension
         ) {
             return;
         }
