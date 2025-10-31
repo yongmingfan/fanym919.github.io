@@ -50,6 +50,14 @@ kbd {
 kbd:has(kbd) {
 	padding: .3rem 0
 }
+/* .Banner {
+	list-style: none;
+	display: flex;
+	flex-flow: row-reverse wrap-reverse;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0
+} */
 
 .Banner {
 	list-style: none;
@@ -57,7 +65,14 @@ kbd:has(kbd) {
 	flex-flow: row-reverse wrap-reverse;
 	justify-content: space-between;
 	margin: 0;
-	padding: 0
+	padding: 0;
+	align-items: baseline; /* aligns text consistently across browsers */
+}
+
+.Banner-item--title {
+	display: flex;
+	align-items: center;   /* fixes Chrome's vertical offset */
+	line-height: 1;        /* normalizes text baseline */
 }
 
 .Banner-item:nth-child(1) {
@@ -80,9 +95,9 @@ kbd:has(kbd) {
 	order: 1
 }
 
-.Banner-item--title {
+/* .Banner-item--title {
 	flex-grow: 1
-}
+} */
 
 .Banner-heading {
 	margin: 0
