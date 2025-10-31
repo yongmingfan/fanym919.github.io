@@ -17,8 +17,11 @@
         <script defer="" src="./index_files/soundcloud.min.0bec.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
-            if (window.location.protocol === "http:") {
-            	window.location.href = "https://" + window.location.host + window.location.pathname + window.location.search;
+            const host = window.location.hostname;
+            const isLocal = host === "localhost" || host === "127.0.0.1";
+            if (window.location.protocol === "http:" && !isLocal) {
+                window.location.href =
+                    "https://" + window.location.host + window.location.pathname + window.location.search;
             }
         </script>
         <script>
@@ -72,6 +75,13 @@
                         </header>
                         <h3>Conference</h3>
 						<ul>
+							<li>
+								<p style="display: inline;">
+                                    Rui Zhu, Genevieve Mortensen, <u></u>Yongming Fan</u>, Haixu Tang, “Illuminating the Unseen: A Large-Scale Exploration of Bias in ICU Discharge Summaries via Language Models.” in
+									<i>IEEE-EMBS International Conference on Biomedical and Health Informatics</i>, 2025. 
+								</p>
+							</li>
+							<br />
 							<li>
 								<p style="display: inline;">
 									<u>Yongming Fan</u>, Priyam Biswas, Christina Garman, “R+R: A Systematic Study of Cryptographic Function Identification Approaches in Binaries.” in

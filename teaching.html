@@ -17,8 +17,11 @@
         <script defer="" src="./index_files/soundcloud.min.0bec.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
-            if (window.location.protocol === "http:") {
-            	window.location.href = "https://" + window.location.host + window.location.pathname + window.location.search;
+            const host = window.location.hostname;
+            const isLocal = host === "localhost" || host === "127.0.0.1";
+            if (window.location.protocol === "http:" && !isLocal) {
+                window.location.href =
+                    "https://" + window.location.host + window.location.pathname + window.location.search;
             }
         </script>
         <script>
